@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import ExpenseChart from "./components/ExpenseChart";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Performance from "./components/Perfomance";
 
 function App() {
+  const data = [
+    {
+      day: "mon",
+      amount: 17.45,
+    },
+    {
+      day: "tue",
+      amount: 34.91,
+    },
+    {
+      day: "wed",
+      amount: 52.36,
+    },
+    {
+      day: "thu",
+      amount: 31.07,
+    },
+    {
+      day: "fri",
+      amount: 23.39,
+    },
+    {
+      day: "sat",
+      amount: 43.28,
+    },
+    {
+      day: "sun",
+      amount: 25.48,
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Header />
+      <Main>
+        <ExpenseChart data={data} />
+        <hr className="newo" />
+        <Performance />
+      </Main>
     </div>
   );
 }
