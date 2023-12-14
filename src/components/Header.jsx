@@ -6,7 +6,7 @@ const Header = () => {
       <p className="balance">
         <span className="balanceLabel smf">My balance</span>
         <br />
-        <span className="balanceValue">$921.48</span>
+        <span className="balanceValue">$981.48</span>
       </p>
       <img className="logo" src={logo} alt="my-logo" width="45" height="30" />
     </header>
