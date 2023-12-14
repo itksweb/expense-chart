@@ -78,7 +78,6 @@ header {
   text-align: center;
   padding: 2px;
   font-size: 10px;
-  /* width: 200%; */
   text-align: center;
   color: white;
   background-color: black;
@@ -102,6 +101,11 @@ header {
   transition: all 0.3s ease-out;
   border-radius: 5px;
 }
+
+.dDay {
+  background-color: hsl(186, 34%, 60%);
+}
+
 .chartDay {
   text-align: center;
   margin-top: 3px;

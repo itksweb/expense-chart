@@ -1,19 +1,17 @@
 const ChartItem = ({ day, amount, maxAmount, id }) => {
-  let barInnerHeight = "0%";
-  if (maxAmount > 0) {
-    barInnerHeight = Math.round((amount / maxAmount) * 100) + "px";
-  }
+  //gets the height of each chart bar
+  const barInnerHeight =
+    maxAmount > 0 ? Math.round((amount / maxAmount) * 100) + "px" : "0%";
+
+  //sets the chart bar style inline
+  const myDayStyle = { height: barInnerHeight };
+
   const dayArray = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
   let date = new Date();
   let p = date.getDay();
 
-  let myDayStyle = { height: barInnerHeight };
-  if (day === dayArray[p]) {
-    myDayStyle = {
-      height: barInnerHeight,
-      backgroundColor: "hsl(186, 34%, 60%)",
-    };
-  }
+  //sets the current day color
+  const innerCss = day === dayArray[p] ? "inner dDay" : "inner";
 
   const whenMouseOver = (e) => {
     e.target.previousElementSibling.style.visibility = "visible";
@@ -27,7 +25,7 @@ const ChartItem = ({ day, amount, maxAmount, id }) => {
       <div className="chartValue">
         <div className="amount">${amount}</div>
         <div
-          className="inner"
+          className={innerCss}
           id={id}
           style={myDayStyle}
           onMouseOver={whenMouseOver}
